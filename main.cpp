@@ -70,6 +70,10 @@ int main() {
         return -1;
     }
 
+    // Show the default cursor in X11
+    GLFWcursor* cursor = glfwCreateStandardCursor(GLFW_ARROW_CURSOR);
+    glfwSetCursor(window, cursor);
+
     // Calculate center position
     int windowPosX = (screenWidth - windowWidth) / 2;
     int windowPosY = (screenHeight - windowHeight) / 2;
