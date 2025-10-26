@@ -22,7 +22,6 @@ cmake -Bbuild && cmake --build build
 
 * Structure
 - main.cpp - Entry point
-- include/ - Headers
 - glad/ - GLAD loader
 - CMakeLists.txt - Build config
 
