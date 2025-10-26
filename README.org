@@ -1,0 +1,30 @@
+#+TITLE: C++ OpenGL Template
+
+* Description
+Minimal C++ OpenGL project template using GLAD, GLFW, and CMake.
+
+GLAD is included. GLFW will be downloaded automatically using CMake's
+FetchContent feature.
+
+* Dependencies
+- CMake 3.18+
+- C++20 compliler
+
+* Build
+#+BEGIN_SRC sh
+cmake -Bbuild && cmake --build build
+#+END_SRC
+
+* Run
+#+BEGIN_SRC sh
+./build/main
+#+END_SRC
+
+* Structure
+- main.cpp - Entry point
+- include/ - Headers
+- glad/ - GLAD loader
+- CMakeLists.txt - Build config
+
+* More
+Check out https://onlyfastcode.com
