@@ -26,6 +26,7 @@ constexpr auto fragmentShaderSource = R"(
     }
 )";
 
+
 [[nodiscard]]
 bool tryCompileShaderWithLog(GLuint shaderID);
 
@@ -35,7 +36,7 @@ bool tryLinkProgramWithLog(GLuint programID);
 constexpr auto triangleVertices = std::array{
     -0.5f, -0.5f, 0.0f,  // Bottom left
     0.5f, -0.5f, 0.0f,  // Bottom right
-    0.0f,  0.5f, 0.0f   // Top
+    0.0f,  0.5f, 0.0f     // Top
 };
 
 
@@ -55,7 +56,7 @@ int main() {
 #endif
 
     const auto* videoMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
-
+    
     const int screenWidth  = videoMode->width;
     const int screenHeight = videoMode->height;
 
@@ -125,10 +126,12 @@ int main() {
 
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(triangleVertices), triangleVertices.data(),
+    glBufferData(GL_ARRAY_BUFFER, sizeof(triangleVertices),
+                 triangleVertices.data(),
                  GL_STATIC_DRAW);
 
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE,
+                          3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -152,6 +155,7 @@ int main() {
             glfwSetWindowShouldClose(window, true);
         }
     }
+    
 
     glDeleteProgram(shaderProgram);
     glDeleteBuffers(1, &VBO);
